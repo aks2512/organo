@@ -4,6 +4,9 @@ Esse é um projeto desenvolvido  durante o curso da alura React: desenvolvendo c
 
 <img src="./screenshot.png" alt="Screenshot da pagina do Organo"/>
 
+## Link do Projeto
+[Para acessar o link do projeto clique aqui](https://organo-ochre.vercel.app/)
+
 ## Tecnologias Utilizadas
 
 -React
