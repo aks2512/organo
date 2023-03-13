@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Banner from './componentes/Banner';
 import Formulario from './componentes/Formulario';
 import Rodape from './componentes/Rodape';
@@ -175,17 +175,11 @@ function App() {
     },
   ]);
 
-  useEffect(() => {
-    if (colaboradores.length > 0) console.log(colaboradores);
-  }, [colaboradores])
-
-
   const aoNovoColaborador = (colaborador) => {
     setColaboradores([...colaboradores, colaborador]);
   }
 
   const deletarColaborador = (id) => {
-    console.log(colaboradores.filter((colaborador) => (colaborador.id !== id)));
     setColaboradores(colaboradores.filter((colaborador) => (colaborador.id !== id)));
   }
 

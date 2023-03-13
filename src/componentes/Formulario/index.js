@@ -12,7 +12,7 @@ const Formulario = ({ aoColaboradorCadastrado, times, cadastrarTime }) => {
     const [time, setTime] = useState(times[0]);
 
     const [nomeTime, setNomeTime] = useState('');
-    const [corTime, setCorTime] = useState('');
+    const [corTime, setCorTime] = useState('#ffffff');
 
     const aoSalvar = (evento) => {
         evento.preventDefault();
@@ -28,6 +28,11 @@ const Formulario = ({ aoColaboradorCadastrado, times, cadastrarTime }) => {
         setCargo('');
         setImagem('');
         setTime(times[0]);
+    }
+
+    const aoSalvarTime = (evento) => {
+        evento.preventDefault();
+        cadastrarTime({nome: nomeTime, cor: corTime});
     }
 
     return (
@@ -63,10 +68,7 @@ const Formulario = ({ aoColaboradorCadastrado, times, cadastrarTime }) => {
                 />
                 <Botao>Criar Card</Botao>
             </form>
-            <form className="formulario" onSubmit={(evento) => {
-                    evento.preventDefault();
-                    cadastrarTime({nome: nomeTime, cor: corTime});
-                }}>
+            <form className="formulario" onSubmit={aoSalvarTime}>
                 <h2>Preencha os dados para criar um novo time.</h2>
                 <Campo
                     obrigatorio
