@@ -1,7 +1,15 @@
 import './ListaSuspensa.css';
 import { v4 as uuidv4 } from 'uuid';
 
-const ListaSuspensa = ({label, obrigatorio, items, valor, aoAlterado}) => {
+interface ListaSuspensaProps {
+    label: string,
+    obrigatorio?: boolean,
+    items: string[],
+    valor: string,
+    aoAlterado: (valor: string) => void
+}
+
+const ListaSuspensa = ({label, obrigatorio = false, items, valor, aoAlterado}: ListaSuspensaProps) => {
     return (
         <div className="lista-suspensa">
             <label>{label}</label>

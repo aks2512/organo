@@ -4,9 +4,11 @@ import Formulario from './componentes/Formulario';
 import Rodape from './componentes/Rodape';
 import Time from './componentes/Time';
 import { v4 as uuidv4 } from 'uuid';
+import { IColaborador } from './compartilhado/interfaces/IColaborador';
+import { ITime } from './compartilhado/interfaces/ITime';
 
 function App() {
-  const [times, setTimes] = useState([
+  const [times, setTimes] = useState<ITime[]>([
     {
       id: uuidv4(),
       nome: 'Programação',
@@ -44,7 +46,7 @@ function App() {
     },
   ]);
 
-  const [colaboradores, setColaboradores] = useState([
+  const [colaboradores, setColaboradores] = useState<IColaborador[]>([
     {
       id: uuidv4(),
       nome: 'Jefferson Akira Fukamizu',
@@ -175,26 +177,26 @@ function App() {
     },
   ]);
 
-  const aoNovoColaborador = (colaborador) => {
+  const aoNovoColaborador = (colaborador: IColaborador) => {
     setColaboradores([...colaboradores, colaborador]);
   }
 
-  const deletarColaborador = (id) => {
+  const deletarColaborador = (id: string) => {
     setColaboradores(colaboradores.filter((colaborador) => (colaborador.id !== id)));
   }
 
-  const mudarCorDoTime = (id, cor) => {
+  const mudarCorDoTime = (id: string | undefined, cor: string) => {
     setTimes(times.map((time) => {
       if (time.id === id) time.cor = cor;
       return time;
     }));
   } 
 
-  const cadastrarTime = (novoTime) => {
+  const cadastrarTime = (novoTime: ITime) => {
     setTimes([...times, {...novoTime, id: uuidv4()}]);
   }
 
-  const resolverFavorito = (id) => {
+  const resolverFavorito = (id: string) => {
     setColaboradores(colaboradores.map((colaborador) => { 
       if (colaborador.id === id) colaborador.favorito = !colaborador.favorito;
       return colaborador;
@@ -203,7 +205,10 @@ function App() {
 
   return (
     <div className="App">
-      <Banner/>
+      <Banner
+        enderecoImagem="/imagens/banner.png"
+        textoAlterantivo="O banner principal da página do Organo"
+      />
       <Formulario 
         cadastrarTime={cadastrarTime}
         times={times.map((time) => time.nome)} 

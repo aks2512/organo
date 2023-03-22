@@ -1,11 +1,19 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Botao from '../Botao';
 import Campo from '../Campo';
 import ListaSuspensa from '../ListaSuspensa';
 import './Formulario.css';
 import { v4 as uuidv4 } from 'uuid';
+import { IColaborador } from '../../compartilhado/interfaces/IColaborador';
+import { ITime } from '../../compartilhado/interfaces/ITime';
 
-const Formulario = ({ aoColaboradorCadastrado, times, cadastrarTime }) => {
+interface FormularioProps {
+    aoColaboradorCadastrado: (colaborador: IColaborador) => void,
+    times: string[],
+    cadastrarTime: (novoTime: ITime) => void
+}
+
+const Formulario = ({ aoColaboradorCadastrado, times, cadastrarTime }: FormularioProps) => {
     const [nome, setNome] = useState('');
     const [cargo, setCargo] = useState('');
     const [imagem, setImagem] = useState('');
@@ -14,7 +22,7 @@ const Formulario = ({ aoColaboradorCadastrado, times, cadastrarTime }) => {
     const [nomeTime, setNomeTime] = useState('');
     const [corTime, setCorTime] = useState('#ffffff');
 
-    const aoSalvar = (evento) => {
+    const aoSalvar = (evento: React.FormEvent<HTMLFormElement>) => {
         evento.preventDefault();
         aoColaboradorCadastrado({
             id : uuidv4(),
@@ -30,7 +38,7 @@ const Formulario = ({ aoColaboradorCadastrado, times, cadastrarTime }) => {
         setTime(times[0]);
     }
 
-    const aoSalvarTime = (evento) => {
+    const aoSalvarTime = (evento: React.FormEvent<HTMLFormElement>) => {
         evento.preventDefault();
         cadastrarTime({nome: nomeTime, cor: corTime});
     }
@@ -54,6 +62,7 @@ const Formulario = ({ aoColaboradorCadastrado, times, cadastrarTime }) => {
                     aoAlterado={valor => setCargo(valor)}
                 />
                 <Campo 
+                    obrigatorio={false}
                     label="Imagem" 
                     placeholder="Digite o endereço da imagem"
                     valor={imagem}
@@ -71,14 +80,14 @@ const Formulario = ({ aoColaboradorCadastrado, times, cadastrarTime }) => {
             <form className="formulario" onSubmit={aoSalvarTime}>
                 <h2>Preencha os dados para criar um novo time.</h2>
                 <Campo
-                    obrigatorio
+                    obrigatorio={false}
                     label="Nome"
                     placeholder="Digite o nome do time"
                     valor={nomeTime}
                     aoAlterado={valor => setNomeTime(valor)}
                 />
                 <Campo
-                    obrigatorio
+                    obrigatorio={false}
                     type="color"
                     label="Cor"
                     placeholder="Digite a cor do time"
