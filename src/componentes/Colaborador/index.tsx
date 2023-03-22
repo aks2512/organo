@@ -6,10 +6,10 @@ interface ColaboradorProps extends IColaborador {
     corDeFundo: string,
     favorito: boolean,
     aoDeletar: (id: string) => void,
-    aoFavoritar: Function,
+    aoFavoritar: (id: string) => IColaborador | void,
 }
 
-const Colaborador = ({id, nome, cargo, imagem, corDeFundo, aoDeletar, favorito, aoFavoritar}: ColaboradorProps) => {
+const Colaborador = ({id, nome, cargo, imagem, data, corDeFundo, aoDeletar, favorito, aoFavoritar}: ColaboradorProps) => {
     
     const favoritar = () => {
         aoFavoritar(id);
@@ -31,6 +31,7 @@ const Colaborador = ({id, nome, cargo, imagem, corDeFundo, aoDeletar, favorito, 
             <div className="rodape">
                 <h4>{nome}</h4>
                 <h5>{cargo}</h5>
+                <h5>{new Date(data).toLocaleDateString()}</h5>
                 <div className="favoritar" >
                     {favorito 
                         ? <AiFillHeart {... propsFavorito} /> 

@@ -17,6 +17,7 @@ const Formulario = ({ aoColaboradorCadastrado, times, cadastrarTime }: Formulari
     const [nome, setNome] = useState('');
     const [cargo, setCargo] = useState('');
     const [imagem, setImagem] = useState('');
+    const [data, setData] = useState('');
     const [time, setTime] = useState(times[0]);
 
     const [nomeTime, setNomeTime] = useState('');
@@ -30,11 +31,13 @@ const Formulario = ({ aoColaboradorCadastrado, times, cadastrarTime }: Formulari
             cargo,
             imagem,
             time,
+            data,
             favorito: false
         });
         setNome('');
         setCargo('');
         setImagem('');
+        setData('');
         setTime(times[0]);
     }
 
@@ -67,6 +70,14 @@ const Formulario = ({ aoColaboradorCadastrado, times, cadastrarTime }: Formulari
                     placeholder="Digite o endereço da imagem"
                     valor={imagem}
                     aoAlterado={valor => setImagem(valor)}
+                />
+                <Campo 
+                    obrigatorio={false}
+                    type="date"
+                    label="Data de entrada no time" 
+                    placeholder="Digite o endereço da imagem"
+                    valor={data}
+                    aoAlterado={valor => setData(valor)}
                 />
                 <ListaSuspensa 
                     obrigatorio={true} 

@@ -3,7 +3,7 @@ import './Campo.css';
 import React from 'react';
 
 interface CampoProps {
-    type?: string,
+    type?: 'text' | 'password' | 'date' | 'email' | 'number' | 'color',
     label: string,
     placeholder: string,
     obrigatorio: boolean,

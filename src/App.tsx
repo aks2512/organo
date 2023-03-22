@@ -53,6 +53,7 @@ function App() {
       cargo: 'Desenvolvedor Front-End',
       imagem: 'https://github.com/aks2512.png',
       time: times[0].nome,
+      data: '2020/12/12',
       favorito: false
     },
     {
@@ -61,6 +62,7 @@ function App() {
       cargo: 'Desenvolvedor Front-End',
       imagem: 'https://github.com/aks2512.png',
       time: times[0].nome,
+      data: '2020/12/12',
       favorito: false
     },
     {
@@ -69,6 +71,7 @@ function App() {
       cargo: 'Desenvolvedor Front-End',
       imagem: 'https://github.com/aks2512.png',
       time: times[0].nome,
+      data: '2020/12/12',
       favorito: false
     },
     {
@@ -77,6 +80,7 @@ function App() {
       cargo: 'Desenvolvedor Front-End',
       imagem: 'https://github.com/aks2512.png',
       time: times[0].nome,
+      data: '2020/12/12',
       favorito: false
     },
     {
@@ -85,6 +89,7 @@ function App() {
       cargo: 'Desenvolvedor Front-End',
       imagem: 'https://github.com/aks2512.png',
       time: times[1].nome,
+      data: '2020/12/12',
       favorito: false
     },
     {
@@ -93,6 +98,7 @@ function App() {
       cargo: 'Desenvolvedor Front-End',
       imagem: 'https://github.com/aks2512.png',
       time: times[1].nome,
+      data: '2020/12/12',
       favorito: false
     },
     {
@@ -101,6 +107,7 @@ function App() {
       cargo: 'Desenvolvedor Front-End',
       imagem: 'https://github.com/aks2512.png',
       time: times[1].nome,
+      data: '2020/12/12',
       favorito: false
     },
     {
@@ -109,6 +116,7 @@ function App() {
       cargo: 'Desenvolvedor Front-End',
       imagem: 'https://github.com/aks2512.png',
       time: times[1].nome,
+      data: '2020/12/12',
       favorito: false
     },
     {
@@ -117,6 +125,7 @@ function App() {
       cargo: 'Desenvolvedor Front-End',
       imagem: 'https://github.com/aks2512.png',
       time: times[2].nome,
+      data: '2020/12/12',
       favorito: false
     },
     {
@@ -125,6 +134,7 @@ function App() {
       cargo: 'Desenvolvedor Front-End',
       imagem: 'https://github.com/aks2512.png',
       time: times[2].nome,
+      data: '2020/12/12',
       favorito: false
     },
     {
@@ -133,6 +143,7 @@ function App() {
       cargo: 'Desenvolvedor Front-End',
       imagem: 'https://github.com/aks2512.png',
       time: times[2].nome,
+      data: '2020/12/12',
       favorito: false
     },
     {
@@ -141,6 +152,7 @@ function App() {
       cargo: 'Desenvolvedor Front-End',
       imagem: 'https://github.com/aks2512.png',
       time: times[2].nome,
+      data: '2020/12/12',
       favorito: false
     },
     {
@@ -149,6 +161,7 @@ function App() {
       cargo: 'Desenvolvedor Front-End',
       imagem: 'https://github.com/aks2512.png',
       time: times[3].nome,
+      data: '2020/12/12',
       favorito: false
     },
     {
@@ -157,6 +170,7 @@ function App() {
       cargo: 'Desenvolvedor Front-End',
       imagem: 'https://github.com/aks2512.png',
       time: times[3].nome,
+      data: '2020/12/12',
       favorito: false
     },
     {
@@ -165,6 +179,7 @@ function App() {
       cargo: 'Desenvolvedor Front-End',
       imagem: 'https://github.com/aks2512.png',
       time: times[3].nome,
+      data: '2020/12/12',
       favorito: false
     },
     {
@@ -173,6 +188,7 @@ function App() {
       cargo: 'Desenvolvedor Front-End',
       imagem: 'https://github.com/aks2512.png',
       time: times[3].nome,
+      data: '2020/12/12',
       favorito: false
     },
   ]);
